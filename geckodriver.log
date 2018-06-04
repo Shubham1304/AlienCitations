@@ -29,3 +29,25 @@ JavaScript error: http://beautiful-soup-4.readthedocs.io/en/latest/, line 3404: 
 1528123958416	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.X9VYNPdXYKtm"
 1528123965200	Marionette	INFO	Listening on port 33681
 1528123965285	Marionette	WARN	TLS certificate errors will be ignored for this session
+1528125007115	geckodriver	INFO	geckodriver 0.19.1
+1528125007126	geckodriver	INFO	Listening on 127.0.0.1:34739
+1528125008579	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.WMY5uhNAgFN4"
+1528125015787	Marionette	INFO	Listening on port 46303
+1528125015863	Marionette	WARN	TLS certificate errors will be ignored for this session
+1528125155907	geckodriver	INFO	geckodriver 0.19.1
+1528125155917	geckodriver	INFO	Listening on 127.0.0.1:47328
+1528125157351	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.p5dGGDZhqols"
+1528125164321	Marionette	INFO	Listening on port 34966
+1528125164396	Marionette	WARN	TLS certificate errors will be ignored for this session
+1528125379191	geckodriver	INFO	geckodriver 0.19.1
+1528125379201	geckodriver	INFO	Listening on 127.0.0.1:59827
+1528125380654	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Gyhb4C7EDcFm"
+1528125387714	Marionette	INFO	Listening on port 42857
+1528125387859	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 14640, Chrome_ChildThread] WARNING: pipe error (38): Connection reset by peer: file /build/firefox-AIw0T6/firefox-60.0.1+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 14640, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-AIw0T6/firefox-60.0.1+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1528125878708	geckodriver	INFO	geckodriver 0.19.1
+1528125878721	geckodriver	INFO	Listening on 127.0.0.1:45899
+1528125880181	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.oQ3e4CCYqIXI"
+1528125887862	Marionette	INFO	Listening on port 38271
+1528125887939	Marionette	WARN	TLS certificate errors will be ignored for this session
