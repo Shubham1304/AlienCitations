@@ -23,3 +23,9 @@
 1528121276754	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.MpgD1PL2uaWD"
 1528121284064	Marionette	INFO	Listening on port 33002
 1528121284114	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://beautiful-soup-4.readthedocs.io/en/latest/, line 3404: ReferenceError: jQuery is not defined
+1528123956962	geckodriver	INFO	geckodriver 0.19.1
+1528123956972	geckodriver	INFO	Listening on 127.0.0.1:56965
+1528123958416	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.X9VYNPdXYKtm"
+1528123965200	Marionette	INFO	Listening on port 33681
+1528123965285	Marionette	WARN	TLS certificate errors will be ignored for this session

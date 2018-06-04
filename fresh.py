@@ -30,18 +30,18 @@ def start():
     make_directory()
     scrape_data(soup)
     i=10
-    #while True:
-        #try:
-    for i in range (20,50):
-        next_url=make_url(i)
-        i+=10
-        print(next_url)
-        browser.get(next_url)
-        source3=browser.page_source
-        soup3 = BeautifulSoup(source3,'html.parser')
-        scrape_data(soup3)
-        #except:
-        #    break
+
+    while True:
+        if not soup.find("div",{'class':'gs_a'}):
+            break
+        else:
+            next_url=make_url(i)
+            i+=10
+            print(next_url)
+            browser.get(next_url)
+            source3=browser.page_source
+            soup = BeautifulSoup(source3,'html.parser')
+            scrape_data(soup)
 
 
 def make_url(num):
@@ -54,7 +54,7 @@ def make_url(num):
 def scrape_data(soup):
     str1=[]
     #str1.append('{\"citations\":[')
-    file=open('/home/shubham/Desktop/directory2/data5.json',"a")
+    file=open('/home/shubham/Desktop/directory3/data1.json',"a")
     str2=[]
     ele=[]
     for ele in soup.find_all("div",{"class":"gs_ri"}):  #for the whole class
@@ -73,7 +73,7 @@ def scrape_data(soup):
 
 
 def make_directory():
-    path = "/home/shubham/Desktop/directory2"
+    path = "/home/shubham/Desktop/directory3"
     os.makedirs(path, exist_ok=True)
     print ("Path is created")
 
