@@ -35,6 +35,9 @@ def start():
             next_url=make_url(i)
             i+=10
             browser.get(next_url)
+            source3=browser.page_source
+            soup3 = BeautifulSoup(source3,'html.parser')
+            scrape_data(soup3)
         except:
             break
 
