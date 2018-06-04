@@ -8,13 +8,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import json
 import errno
-
+browser = webdriver.Firefox()
 def start():
     print("Enter the name of the author you want to search:")
     search=input()
     url="https://scholar.google.co.in/citations?view_op=search_authors&mauthors=" + search
 
-    browser = webdriver.Firefox()
+
     browser.get(url)
     elem = WebDriverWait(browser,10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="gsc_sa_ccl"]/div/div/h3/a/span')))
     source = browser.page_source
@@ -30,20 +30,22 @@ def start():
     make_directory()
     scrape_data(soup)
     i=10
-    while True:
-        try:
-            next_url=make_url(i)
-            i+=10
-            browser.get(next_url)
-            source3=browser.page_source
-            soup3 = BeautifulSoup(source3,'html.parser')
-            scrape_data(soup3)
-        except:
-            break
+    #while True:
+        #try:
+    for i in range (20,50):
+        next_url=make_url(i)
+        i+=10
+        print(next_url)
+        browser.get(next_url)
+        source3=browser.page_source
+        soup3 = BeautifulSoup(source3,'html.parser')
+        scrape_data(soup3)
+        #except:
+        #    break
 
 
 def make_url(num):
-    text=browser.current_url()
+    text=browser.current_url
     text1,text2=text.split('?')
     text3,text4=text2.split("&",1)
     next_url=text1+"?"+"start="+str(num)+"&"+text4
@@ -52,7 +54,7 @@ def make_url(num):
 def scrape_data(soup):
     str1=[]
     #str1.append('{\"citations\":[')
-    file=open('/home/shubham/directory2/data5.json',"a")
+    file=open('/home/shubham/Desktop/directory2/data5.json',"a")
     str2=[]
     ele=[]
     for ele in soup.find_all("div",{"class":"gs_ri"}):  #for the whole class
@@ -62,6 +64,7 @@ def scrape_data(soup):
         for ele2 in ele.find_all("div",{'class':'gs_a'}):
             for a2 in ele2.find_all('a'):
                 str1.append(a2.text)
+                str1.append(",")
     #str1.append(']}')
     var = ' '.join(str1)
     file.write(var)
@@ -73,3 +76,5 @@ def make_directory():
     path = "/home/shubham/Desktop/directory2"
     os.makedirs(path, exist_ok=True)
     print ("Path is created")
+
+start()
