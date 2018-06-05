@@ -11,9 +11,10 @@ import errno
 browser = webdriver.Firefox()
 str1=[]
 def start():
-    print("Enter the name of the author you want to search:")
-    search=input()
-    url="https://scholar.google.co.in/citations?view_op=search_authors&mauthors=" + search
+    #print("Enter the name of the author you want to search:")
+    #search=sys.argv[1]
+    url=sys.argv[1]
+    print(url)
     browser.get(url)
     elem = WebDriverWait(browser,10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="gsc_sa_ccl"]/div/div/h3/a/span')))
     source = browser.page_source
@@ -65,9 +66,9 @@ def make_url(num):
     return next_url
 
 def scrape_data(soup):
-
-
-    file=open('/home/shubham/Desktop/directory3/data3.json',"a")
+    name1,name2,name3=sys.argv[1].split('=')
+    print(name3)
+    file=open('./directory1/'+name3+'.json',"a")
     str2=[]
     ele=[]
     for ele in soup.find_all("div",{"class":"gs_ri"}):  #for the whole class
@@ -81,14 +82,14 @@ def scrape_data(soup):
                 str1.append("\"")
                 str1.append(",")
     #str1.append(']}')
-    var = ' '.join(str1)
+    var = ''.join(str1)
     file.write(var)
     file.close()
 
 
 
 def make_directory():
-    path = "/home/shubham/Desktop/directory3"
+    path = "./directory1"
     os.makedirs(path, exist_ok=True)
     print ("Path is created")
 
