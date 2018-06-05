@@ -27,8 +27,8 @@ def start():
     css_1="tr.gsc_a_tr:nth-child("
     css_2=") > td:nth-child(2)"
     j=1
-    make_directory()
     str1.append('[')
+    make_directory()
     while True:
         try:
         #if(browser.find_element_by_css_selector(css_1+str(j)+css_2)):
